@@ -1812,6 +1812,8 @@ class Storage
     public function getUri($title, $id = 0, $contenttypeslug = "", $fulluri = true)
     {
 
+        if(!$contenttypeslug) $contenttypeslug = "entries";
+        
         $contenttype = $this->getContentType($contenttypeslug);
         $tablename = $this->prefix . $contenttype['slug'];
 
